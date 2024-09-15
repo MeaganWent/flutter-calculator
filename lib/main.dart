@@ -36,11 +36,11 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   void _calculateResult() {
     try {
       final expression = Expression.parse(_expression);
-      final evaluator = const ExpressionEvaluator();
-      final result = evaluator.eval(expression, {});
-      setState(() {
-        _result = result.toString();
-      });
+        final evaluator = const ExpressionEvaluator();
+        final result = evaluator.eval(expression, {});
+        setState(() {
+          _result = result.toString();
+        });
     } catch (e) {
       setState(() {
         _result = 'Error';
@@ -126,6 +126,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
               _buildButton('.'),
               _buildButton('='),
               _buildButton('/'),
+              _buildButton('%'),
             ],
           ),
           Padding(
